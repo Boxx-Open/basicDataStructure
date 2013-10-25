@@ -3,18 +3,14 @@
 
 void main()
 {
-	SString S = "0abaabcac";
-	S[0] = 8;
-	SString T = "0ac";
-	T[0] = 2;
+	SString S = "0ksdhfkhksdhfkjdvbhjsdajf";
+	SString T = "0hks";
+	S[0] = 24;
+	T[0] = 3;
 	char pos = 1;
-	char i = 1;
-	char finalPos = Index(S, T, pos);
-	printf("%d\n", finalPos);
-	char next[8];
-	getNext(S, next);
-	for(i = 0; i < 8; i++)
-	{
-		printf("%d\n", next[i]);
-	}
+	char next[4];
+	char indexNormal = Index(S, T, pos);
+	getNext(T, next);
+	char indexKMP = KMPIndex(S, T, pos, next);
+	printf("%d %d", indexNormal, indexKMP);
 }
